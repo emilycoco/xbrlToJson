@@ -1,0 +1,20 @@
+{
+  "name": "xbrl_to_json",
+  "version": "1.0.0",
+  "description": "Get common financial terms from xbrl document in json format.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emily Coco",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
+  },
+  "scripts": {
+    "build": "browserify -t [ babelify --presets [ react ] ] src/*.js -o build/app.js"
+  }
+}
