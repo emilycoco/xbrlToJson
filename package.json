@@ -4,7 +4,7 @@
   "description": "Get common financial terms from xbrl document in json format.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify --debug -t [ babelify --presets [ react ] ] src/*.jsx -o build/app.js"
   },
   "author": "Emily Coco",
   "license": "ISC",
@@ -12,9 +12,10 @@
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "watchify": "^3.7.0"
   },
-  "scripts": {
-    "build": "browserify -t [ babelify --presets [ react ] ] src/*.js -o build/app.js"
+  "devDependencies": {
+    "watchify": "^3.7.0"
   }
 }
