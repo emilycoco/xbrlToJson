@@ -7,18 +7,23 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <div>
-          <XbrlForm onXbrlSubmit={this.handleXbrlInput}/>
-        </div>
-        <div>
-          <XbrlDisplay output={this.state.data}/>
+        <h1 className="no-bottom">XBRL to JSON</h1>
+        <div className="container">
+          <div className="third">
+            <h2>Xbrl goes here:</h2>
+            <XbrlForm onXbrlSubmit={this.handleXbrlInput}/>
+          </div>
+          <div className="third two">
+          <h2>Json will appear here:</h2>
+            <XbrlDisplay output={this.state.data}/>
+          </div>
         </div>
       </div>
     );
   },
   getInitialState: function() {
     return {
-      data: 'Output will show up here'
+      data: ''
     };
   },
   handleXbrlInput: function(xbrlStr) {
@@ -41,7 +46,7 @@ var App = React.createClass({
   })
     .then(function(resp) {
       resp.json().then(function(rspJson) {
-        this.setState({data: JSON.stringify(rspJson.response)});
+        this.setState({data: rspJson.response});
       }.bind(this))
       .catch(function(err) {
         this.setState({data: 'Error parsing json: ' + err})
