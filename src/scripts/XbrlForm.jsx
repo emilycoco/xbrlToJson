@@ -8,7 +8,7 @@ module.exports = React.createClass({
         value={this.state.value}
         onChange={this.handleChange} />
         <button type="submit">Submit</button>
-        <p>{this.state.json}</p>
+        {this.props.error ? <span className="error">{this.props.error}</span> : null}
       </form>
     );
   },

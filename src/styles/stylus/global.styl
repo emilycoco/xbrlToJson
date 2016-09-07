@@ -23,38 +23,61 @@ ul {
 }
 body {
   font-family: verdana;
+  font-size: 14px;
+  color: #1a1a1a;
 }
 div,
 form,
 textarea {
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+  font-size: 1em;
 }
 textarea {
-  max-height: 400px;
+  height: 300px;
+  border: 3px solid #dcdcdc;
 }
-h1 {
+p {
   padding: 20px;
 }
 h2 {
   padding: 10px 0;
+  color: #717F76;
+  font-weight: 600;
 }
 button {
   margin: 20px 0;
+  width: 150px;
   padding: 10px 50px;
+  background: #46CC74;
+  color: #fff;
+  border: none;
+}
+form {
+  margin: 0 auto;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+header {
+  background: #717F76;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  h1 {
+    padding: 0 20px;
+    text-shadow: 1px 1px 1px #1a1a1a;
+    font-size: 1.5em;
+  }
 }
 .container {
   display: flex;
-}
-.third {
-  display: flex;
-  flex: 1;
-  flex-flow: row wrap;
-  padding: 20px;
-  &.two {
-    flex: 2;
-  }
+  flex-flow: column nowrap;
+  width: 70%;
+  min-width: 350px;
+  margin: 0 auto;
 }
 .no-bottom {
   margin-bottom: 0;
@@ -68,9 +91,22 @@ button {
   font-weight: 600;
 }
 .json-formatted {
-  font-size: .7em;
+  font-size: .9em;
+  background: rgba(220,220,220, .3);
+  padding: 20px;
+  margin-bottom : 20px;
   ul {
     line-height: 1.5em;
     padding-left: 30px;
   }
+}
+.error {
+  position: absolute;
+  top: 20%;
+  width: 80%;
+  margin: 0 10%;
+  padding: 10px;
+  text-align: center;
+  background: rgba(217,43,43,.8);
+  color: #fff;
 }
