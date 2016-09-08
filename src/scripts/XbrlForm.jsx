@@ -4,7 +4,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <textarea placeholder="Paste xbrl here"
+        <textarea placeholder="Paste xbrl or xml document here"
         value={this.state.value}
         onChange={this.handleChange} />
         <div className="button-container">

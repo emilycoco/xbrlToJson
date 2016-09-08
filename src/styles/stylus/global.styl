@@ -44,13 +44,26 @@ h2 {
   color: #717F76;
   font-weight: 600;
 }
+.main {
+  min-height: 100vh;
+  flex: 1;
+}
+.button-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
 button {
-  margin: 20px 0;
-  width: 150px;
+  margin: 20px 20px 0 0;
+  width: 200px;
   padding: 10px 50px;
-  background: #46CC74;
+  background: #717F76;
   color: #fff;
   border: none;
+}
+.cta {
+  background: #46CC74;
 }
 form {
   margin: 0 auto;
@@ -59,13 +72,21 @@ form {
   width: 100%;
   position: relative;
 }
-header {
-  background: #717F76;
+header, footer {
   height: 50px;
   color: #fff;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+}
+footer {
+  background: #d2d2d2;
+  span {
+    padding: 0 20px;
+  }
+}
+header {
+  background: #717F76;
   h1 {
     padding: 0 20px;
     text-shadow: 1px 1px 1px #1a1a1a;
@@ -98,6 +119,7 @@ header {
   ul {
     line-height: 1.5em;
     padding-left: 30px;
+    word-wrap: break-word;
   }
 }
 .error {
