@@ -26,7 +26,6 @@ module.exports = React.createClass({
   },
   handleSubmit: function(e) {
     e.preventDefault();
-    console.log('submitting from form', this.state.value);
     this.props.onXbrlSubmit(this.state.value);
   },
   clear: function(e) {
@@ -43,12 +42,16 @@ module.exports = React.createClass({
         'Content-Type': 'application/json'
       }
     }).then(function(resp) {
-      resp.json().then(function(rspText) {
-          this.setState({value: rspText.response});
-      }.bind(this))
-      .catch(function(err) {
+      if (resp.status === 500) {
         this.props.loadError('Could not load sample document.');
-      }.bind(this));
+      } else {
+        resp.json().then(function(rspText) {
+          this.setState({value: rspText.response});
+        }.bind(this))
+        .catch(function(err) {
+          this.props.loadError('Could not load sample document.');
+        }.bind(this));
+      }
     }.bind(this))
     .catch(function(err) {
       this.props.loadError('Could not load sample document.');

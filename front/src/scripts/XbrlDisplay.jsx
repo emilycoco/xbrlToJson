@@ -1,6 +1,4 @@
 var React = require('react');
-var jsonFormat = require('json-format');
-
 
 module.exports = React.createClass({
   render: function() {

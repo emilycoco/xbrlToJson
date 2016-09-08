@@ -27,7 +27,6 @@ var App = React.createClass({
     };
   },
   handleXbrlInput: function(xbrlStr) {
-    console.log('parent handles input');
     this.resetError();
     this.requestParsedInput(xbrlStr);
   },
@@ -38,7 +37,6 @@ var App = React.createClass({
     document.getElementById('display').scrollIntoView({ behavior: 'smooth' });
   },
   requestParsedInput: function(inputStr) {
-    console.log('sending request');
     fetch('http://localhost:3000/parse-string', {
       method: 'POST',
       mode: 'cors',
