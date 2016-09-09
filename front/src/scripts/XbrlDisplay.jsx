@@ -14,7 +14,7 @@ module.exports = React.createClass({
       );
   },
   processJsonOutput: function(output) {
-    var lines = Object.keys(output).map((key, idx) => {
+    var lines = Object.keys(output).map(function(key, idx) {
       return (
           <li key={idx}>
             <span className="bold">"{key}": </span>
