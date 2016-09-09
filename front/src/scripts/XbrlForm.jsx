@@ -34,7 +34,7 @@ module.exports = React.createClass({
   },
   loadSampleDoc: function(e) {
     e.preventDefault();
-    fetch('http://localhost:3000/sample-doc', {
+    fetch('/sample-doc', {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -42,16 +42,16 @@ module.exports = React.createClass({
         'Content-Type': 'application/json'
       }
     }).then(function(resp) {
-      if (resp.status === 500) {
-        this.props.loadError('Could not load sample document.');
-      } else {
-        resp.json().then(function(rspText) {
+      resp.json().then(function(rspText) {
+        if (rspText.response) {
           this.setState({value: rspText.response});
-        }.bind(this))
-        .catch(function(err) {
+        } else {
           this.props.loadError('Could not load sample document.');
-        }.bind(this));
-      }
+        }
+      }.bind(this))
+      .catch(function(err) {
+        this.props.loadError('Could not load sample document.');
+      }.bind(this));
     }.bind(this))
     .catch(function(err) {
       this.props.loadError('Could not load sample document.');

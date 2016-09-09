@@ -4,6 +4,7 @@ var parseXbrl = require('parse-xbrl');
 var fs = require('fs');
 var app = express();
 
+app.use(express.static(__dirname + '/../front/build'));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({
   extended: true

@@ -37,7 +37,7 @@ var App = React.createClass({
     document.getElementById('display').scrollIntoView({ behavior: 'smooth' });
   },
   requestParsedInput: function(inputStr) {
-    fetch('http://localhost:3000/parse-string', {
+    fetch('/parse-string', {
       method: 'POST',
       mode: 'cors',
       headers: {
