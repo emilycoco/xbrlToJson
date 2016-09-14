@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var fetch = window.fetch || require('node-fetch');
 
 var XbrlForm = require('./XbrlForm.jsx');
 var XbrlDisplay = require('./XbrlDisplay.jsx');
@@ -37,7 +38,7 @@ var App = React.createClass({
     document.getElementById('display').scrollIntoView({ behavior: 'smooth' });
   },
   requestParsedInput: function(inputStr) {
-    fetch('/parse-string', {
+    fetch(window.location.href + 'parse-string', {
       method: 'POST',
       mode: 'cors',
       headers: {

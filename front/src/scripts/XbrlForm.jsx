@@ -1,4 +1,5 @@
 var React = require('react');
+var fetch = window.fetch || require('node-fetch');
 
 module.exports = React.createClass({
   render: function() {
@@ -34,7 +35,7 @@ module.exports = React.createClass({
   },
   loadSampleDoc: function(e) {
     e.preventDefault();
-    fetch('/sample-doc', {
+    fetch(window.location.href + 'sample-doc', {
       method: 'GET',
       mode: 'cors',
       headers: {
